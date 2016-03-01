@@ -1,0 +1,10 @@
+<% content_for :page_title, t('app.title') %>
+
+<div class='main_page'>
+
+  <ul>
+  <% @main_navigation.content.values.first.children.each do |key, value| %>
+    <li><%= render_link_for_navigation(nil, value, { :link_for => key }) %></li>
+  <% end %>
+  </ul>
+</div>

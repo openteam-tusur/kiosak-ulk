@@ -22,12 +22,16 @@
   </head>
   <body>
   <nav class="navbar">
-    <div class='navbar-right'>
-      <p class='date-week-time'>
-      <span class='date'></span>
-      <span class='week'></span>
-      <span class='time'></span>
-      </p>
+    <div class='navbar-right login'>
+      <% if request.path == '/manage'  %>
+        <div class="col-xs-5">
+        <% if user_signed_in? %>
+          <%= current_user.email %>
+        <% else %>
+          <%= link_to I18n.t('app.sign_in'), sign_in_url, class: "btn btn-default sign-in-link" %>
+        <% end %>
+        </div>
+      <% end %>
     </div>
     <div class='image-container'>
       <%= image_tag "tusur-white.png", class: "brand-image" %>
@@ -36,5 +40,6 @@
     <div class='page_wrapper'>
       <%= yield %>
     </div>
+    <%#= render :partial => 'footer' %>
   </body>
 </html>
