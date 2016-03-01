@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160301062941) do
+ActiveRecord::Schema.define(version: 20160301064051) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "date_temps", force: :cascade do |t|
+    t.date     "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "permissions", force: :cascade do |t|
     t.string   "user_id"
@@ -26,5 +32,19 @@ ActiveRecord::Schema.define(version: 20160301062941) do
   end
 
   add_index "permissions", ["user_id", "role", "context_id", "context_type"], name: "by_user_and_role_and_context", using: :btree
+
+  create_table "places", force: :cascade do |t|
+    t.integer  "number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "temps", force: :cascade do |t|
+    t.string   "temperature"
+    t.integer  "date_temp_id"
+    t.integer  "place_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
 end

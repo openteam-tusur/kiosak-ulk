@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  temperature: MyString
+  place_id: 
+  date_temp_id: 
+
+two:
+  temperature: MyString
+  place_id: 
+  date_temp_id: 
