@@ -21,6 +21,7 @@
 
   </head>
   <body>
+
   <nav class="navbar">
     <div class='navbar-right login'>
       <% if request.path == '/manage'  %>
@@ -37,7 +38,13 @@
       <%= image_tag "tusur-white.png", class: "brand-image" %>
     </div>
   </nav>
-    <div class='page_wrapper'>
+    <div class='container manage'>
+        <% if flash[:alert] %>
+          <p class="flash-error alert alert-danger"><%= flash[:alert] %></p>
+        <% end %>
+        <% if flash[:notice] %>
+          <p class="flash-notice alert alert-success"><%= flash[:notice] %></p>
+        <% end %>
       <%= yield %>
     </div>
     <%#= render :partial => 'footer' %>

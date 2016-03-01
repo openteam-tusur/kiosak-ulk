@@ -1,4 +1,13 @@
 ru:
+  activerecord:
+    attributes:
+      place:
+        number: "Номер аудитории"
+
   app:
     sign_in: "Войти"
+  helpers:
+    submit:
+      create: "Добавить"
+      update: "Обновить"
 

@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   get '/time' => 'integration#time_and_week'
 
   namespace :manage do
-    get 'temperature', to: 'term#index'
-
     resources :places
+
+    get 'temperature', to: 'term#index'
     root :to => 'application#index'
   end
 

@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20160301064051) do
   add_index "permissions", ["user_id", "role", "context_id", "context_type"], name: "by_user_and_role_and_context", using: :btree
 
   create_table "places", force: :cascade do |t|
-    t.integer  "number"
+    t.string   "number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
