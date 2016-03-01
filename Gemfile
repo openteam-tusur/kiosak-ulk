@@ -6,6 +6,7 @@ group :default do
   gem 'auth_redis_user_connector', :git => 'https://github.com/openteam-tusur/auth_redis_user_connector'
   gem 'redis-session-store'
   gem 'bootstrap-sass', '~> 3.1.1'
+  gem 'cancancan'
   gem 'coffee-rails', '~> 4.1.0'
   gem 'compass-rails', github: "Compass/compass-rails", branch: "master"
   gem 'esp-commons'
