@@ -2,7 +2,7 @@ class Manage::DateTempsController < Manage::ApplicationController
   before_action :find_item, only: [:edit, :show, :update]
 
   def index
-    @date_temps = DateTemp.all
+    @date_temps = DateTemp.page(params[:page]).per(1)
   end
 
   def new
@@ -14,7 +14,8 @@ class Manage::DateTempsController < Manage::ApplicationController
   end
 
   def create
-    if @date_temp = DateTemp.create(date_temp_params) #raise params.inspect
+    @date_temp = DateTemp.new(date_temp_params) #raise params.inspect
+    if @date_temp.save
       redirect_to manage_date_temp_path(@date_temp)
     else
       render :new

@@ -1,8 +1,17 @@
-<h1>Календарь</h1>
-<%= link_to 'Добавить', new_manage_date_temp_path %>
+<div class="col-xs-5">
+  <h1>Календарь</h1>
+</div>
+<div class="col-xs-7 actions">
+  <%= link_to 'Добавить данные', new_manage_date_temp_path, class: "btn btn-success" %>
+  <%= link_to 'Управление аудиториями', manage_places_path, class: "btn btn-success" %>
+</div>
 
-<ul>
-<% @date_temps.each do |date| %>
-  <li><%= link_to date.date_title, manage_date_temp_path(date) %></li>
-<% end %>
-</ul>
+<div class="col-xs-12 list_dates">
+  <ul>
+  <% @date_temps.each do |date| %>
+    <li><%= link_to date.date_title, manage_date_temp_path(date) %></li>
+  <% end %>
+  </ul>
+</div>
+
+<%= paginate @date_temps %>

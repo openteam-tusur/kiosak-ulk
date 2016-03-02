@@ -2,7 +2,7 @@ class Manage::PlacesController < Manage::ApplicationController
   before_action :find_item, only: [:destroy, :update, :edit]
 
   def index
-    @places = Place.order("number DESC").all
+    @places = Place.order("number ASC")
   end
 
   def new

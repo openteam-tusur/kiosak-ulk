@@ -20,6 +20,9 @@ ru:
         name: 'ФИО'
         role: 'Роль'
 
+      date_temp:
+        date_title: "Дата"
+
       place:
         number: "Номер аудитории"
       temp:
@@ -27,7 +30,15 @@ ru:
 
   app:
     sign_in: "Войти"
+
   helpers:
     submit:
       create: "Добавить"
       update: "Обновить"
+
+  views:
+    pagination:
+      next: ">"
+      last: ">>"
+      previous: "<"
+      first: "<<"

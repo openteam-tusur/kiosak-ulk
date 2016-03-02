@@ -1,6 +1,7 @@
 class DateTemp < ActiveRecord::Base
   has_many :temps
 
+  validates_uniqueness_of :date_title
   accepts_nested_attributes_for :temps
 end
 

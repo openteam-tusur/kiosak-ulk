@@ -1,6 +1,6 @@
 <%= simple_form_for [:manage, @place] do |f| %>
   <%= f.input :number %>
-  <%= f.button :submit, class: "btn-action" %>
+  <%= f.button :submit, class: "btn-success btn-action" %>
 <% end %>
 
 <%= link_to "Отмена", manage_places_path, class: "btn btn-danger" %>
