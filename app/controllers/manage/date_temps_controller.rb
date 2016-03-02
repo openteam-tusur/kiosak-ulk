@@ -2,7 +2,7 @@ class Manage::DateTempsController < Manage::ApplicationController
   before_action :find_item, only: [:edit, :show, :update]
 
   def index
-    @date_temps = DateTemp.page(params[:page]).per(1)
+    @date_temps = DateTemp.page(params[:page]).per(50)
   end
 
   def new
