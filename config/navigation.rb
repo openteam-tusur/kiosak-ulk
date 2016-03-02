@@ -4,6 +4,10 @@ SimpleNavigation::Configuration.run do |navigation|
   navigation.items do |primary|
     primary.item :permissions, 'Управление правами', manage_permissions_path,
       highlights_on: /\/manage\/permissions/, if: -> { can?(:manage, Permission) }
+    primary.item :places, 'Управление аудиториями', manage_places_path,
+      highlights_on: /\/manage\/places/, if: -> { can?(:manage, Place) }
+    primary.item :places, 'Управление температурой', manage_date_temps_path,
+      highlights_on: /\/manage\/date_temps/, if: -> { can?(:manage, DateTemp) }
   end
 end
 

@@ -1,6 +1,9 @@
-<%= simple_form_for [:manage, @place] do |f| %>
-  <%= f.input :number %>
-  <%= f.button :submit, class: "btn-success btn-action" %>
-<% end %>
-
-<%= link_to "Отмена", manage_places_path, class: "btn btn-danger" %>
+<div class='col-xs-4'>
+  <%= simple_form_for [:manage, @place] do |f| %>
+    <%= f.input :number, autofocus: true %>
+    <p>
+      <%= f.submit class: 'btn btn-success btn-place-submit' %>
+      <%= link_to 'Отмена', manage_places_path, class: 'btn btn-default' %>
+    </p>
+  <% end %>
+</div>

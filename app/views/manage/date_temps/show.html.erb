@@ -1,18 +1,27 @@
-<div class="col-xs-12 temperature_table">
-  <h1>Температура в аудиториях на <%= @date_temp.date_title %></h1>
+<div class='row'>
+  <div class='col-xs-12 temperature_table'>
+    <h3>Температура в аудиториях на <%= I18n.l @date_temp.date_title, format: :long %></h3>
 
-  <table>
-    <tr>
-      <th>Аудитория</th>
-      <th>Температура</th>
-    </tr>
-    <% @date_temp.temps.each do |temp| %>
-      <tr>
-        <td><%= temp.place.number %></td>
-        <td><%= temp.temperature %>&deg;С</td>
-      </tr>
-    <% end %>
-  </table>
+    <table>
+      <thead>
+        <tr>
+          <th>Аудитория</th>
+          <th>Температура (&deg;С)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @date_temp.temps.sort{ |a, b| a.place.number <=> b.place.number }.each do |temp| %>
+          <tr>
+            <td><%= temp.place.number %></td>
+            <td><%= temp.temperature %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-  <%= link_to "Обновить данные", edit_manage_date_temp_path(@date_temp), class: "btn btn-success" %>
+    <p>
+      <%= link_to 'Изменить', edit_manage_date_temp_path(@date_temp), class: 'btn btn-success' %>
+      <%= link_to 'назад', manage_date_temps_path, class: 'btn btn-default' %>
+    </p>
+  </div>
 </div>

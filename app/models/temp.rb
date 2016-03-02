@@ -2,7 +2,7 @@ class Temp < ActiveRecord::Base
   belongs_to :place
   belongs_to :date_temp
 
-  default_value_for :temperature, 22
+  validates :temperature, numericality: true, allow_blank: true
 end
 
 # == Schema Information

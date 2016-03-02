@@ -1,15 +1,22 @@
-<div class="row">
-  <div class="col-xs-4">
-    <h1>Аудитории</h1>
+<div class='row'>
+  <div class='col-xs-4'>
+    <h3>Аудитории</h3>
   </div>
-  <div class="col-xs-8 actions">
-    <%= link_to "Добавить аудиторию", new_manage_place_path, class: "btn btn-success" %>
+  <div class='col-xs-8 btn-actions'>
+    <%= link_to 'Добавить аудиторию', new_manage_place_path, class: 'btn btn-success' %>
   </div>
 </div>
+
 <% @places.each do |place| %>
-  <div class="places_list panel panel-default panel-body">
-    <div class="col-xs-10 number"><%= place.number %></div>
-    <div class="col-xs-1"><%= link_to 'Изменить', edit_manage_place_path(place), class: "btn btn-primary" %></div>
-    <div class="col-xs-1"><%= link_to 'Удалить', manage_place_path(place), method: :delete, class: "btn btn-danger", data: { confirm: "Удалить аудиторию?" } %></div>
+  <div class='places_list panel panel-default panel-body'>
+    <div class='col-xs-10 number'><%= place.number %></div>
+    <div class='actions'>
+      <%= link_to edit_manage_place_path(place) do %>
+        <span class='glyphicon glyphicon-pencil' data-toggle='tooltip' data-placement='top' title='Редактировать'></span>
+      <% end %>
+      <%= link_to manage_place_path(place), method: :delete, data: { confirm: 'Удалить аудиторию?' } do %>
+        <span class='glyphicon glyphicon-remove' data-toggle='tooltip' data-placement='top' title='Удалить'>
+      <% end %>
+    </div>
   </div>
 <% end %>
