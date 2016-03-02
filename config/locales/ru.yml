@@ -1,8 +1,17 @@
 ru:
-  app_name: Киоск УЛК
+  app_name: 'Киоск УЛК'
+
+  permissions:
+    admin: 'Администратор'
+    manager: 'Менеджер'
 
   activerecord:
     attributes:
+
+      permission:
+        name: 'ФИО'
+        role: 'Роль'
+
       place:
         number: "Номер аудитории"
 

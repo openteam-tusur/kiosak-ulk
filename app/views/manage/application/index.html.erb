@@ -1,6 +1,13 @@
-<% if can? :manage, @article  %>
-  <h3>Добро пожаловать!</h3>
-<% elsif can? :read, @article %>
-  <h3>У вас нет прав администратора! Авторизуйтесь и получите права!</h3>
-<% end %>
+<div class='row'>
+  <div class='col-xs-12'>
+    <% unless current_user  %>
+      <h3>Необходимо авторизоваться в системе</h3>
+    <% else %>
+      <h3>Доброго времени суток!</h3>
+    <% end %>
+    <% if flash[:alert].present? %>
+      <h4 class='text-danger'><%= flash[:alert] %></h4>
+    <% end %>
+  </div>
+</div>
 

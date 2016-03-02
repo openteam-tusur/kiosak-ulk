@@ -54,16 +54,16 @@ module Cmsable
       :entitystore => "file:#{Rails.root.join('tmp/rack-cache/body')}",
       :verbose => true
 
-      @rest_request ||= RestClient::Request.execute(
-        :method => :get,
-        :url => remote_url,
-        :headers => {
-          :Accept => 'application/json',
-          :timeout => 600
-        }
-      ) do |response, request, result, &block|
-        response
-      end
+    @rest_request ||= RestClient::Request.execute(
+      :method => :get,
+      :url => remote_url,
+      :timeout => nil,
+      :headers => {
+        :Accept => 'application/json'
+      }
+    ) do |response, request, result, &block|
+      response
+    end
   end
 
   def request_status

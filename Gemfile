@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'auth_client', :git => 'https://github.com/openteam-tusur/auth_client'
-gem 'auth_redis_user_connector', :git => 'https://github.com/openteam-tusur/auth_redis_user_connector'
+gem 'auth_client', git: 'https://github.com/openteam-tusur/auth_client'
+gem 'auth_redis_user_connector', git: 'https://github.com/openteam-tusur/auth_redis_user_connector'
 gem 'bootstrap-sass'
 gem 'cancancan'
 gem 'coffee-rails', '~> 4.1.0'
@@ -11,6 +11,8 @@ gem 'gravtastic'
 gem 'hashie'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'jquery-ui-sass-rails'
 gem 'openteam-commons'
 gem 'pg'
 gem 'rack-cache'
@@ -32,6 +34,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'annotate', require: false
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end

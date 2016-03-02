@@ -12,7 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require jquery.ui.all
 //= require bootstrap-sprockets
 //= require tusur_header
+//= require ./user_autocomplete
 //= require ./main
