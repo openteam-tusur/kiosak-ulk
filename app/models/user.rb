@@ -1,5 +1,13 @@
 class User
+
   include AuthClient::User
+  include TusurHeader::MenuLinks
+
+  acts_as_auth_client_user
+
+  def app_name
+    Settings['app.name'].to_s.parameterize('_')
+  end
 
   Permission.available_roles.each do |role|
     define_method "#{role}?" do
@@ -7,7 +15,4 @@ class User
     end
   end
 
-  def app_name
-    Settings['app.host'].to_s.parameterize('_')
-  end
 end
