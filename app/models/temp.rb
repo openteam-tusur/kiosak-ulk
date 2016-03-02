@@ -1,6 +1,8 @@
 class Temp < ActiveRecord::Base
   belongs_to :place
   belongs_to :date_temp
+
+  default_value_for :temperature, 22
 end
 
 # == Schema Information

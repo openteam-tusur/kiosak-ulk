@@ -1,0 +1,8 @@
+<h1>Календарь</h1>
+<%= link_to 'Добавить', new_manage_date_temp_path %>
+
+<ul>
+<% @date_temps.each do |date| %>
+  <li><%= link_to date.date_title, manage_date_temp_path(date) %></li>
+<% end %>
+</ul>

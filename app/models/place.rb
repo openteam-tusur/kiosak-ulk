@@ -1,5 +1,10 @@
 class Place < ActiveRecord::Base
   has_many :temps
+
+  validates_presence_of :number
+  validates_uniqueness_of :number
+
+  scope :ordered, -> { order(:number) }
 end
 
 # == Schema Information

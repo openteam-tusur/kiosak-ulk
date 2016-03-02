@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require tusur_header
 //= require jquery_ujs
 //= require jquery.ui.all
 //= require bootstrap-sprockets

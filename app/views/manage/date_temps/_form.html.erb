@@ -1,0 +1,9 @@
+<%= simple_form_for [:manage, @date_temp], html: { class: "date_temp_form" } do |f| %>
+  <%= f.input :date_title %>
+  <%= f.simple_fields_for :temps do |p| %>
+    <%= p.input :place_id, as: :hidden, input_html: { value: p.object.place.id } %>
+    <%= p.label "Аудитория: #{p.object.place.number}" %>
+    <%= p.input :temperature %>
+  <% end %>
+  <%= f.submit 'Сохранить', name: nil %>
+<% end %>

@@ -14,6 +14,8 @@ class Manage::PlacesController < Manage::ApplicationController
     respond_to do |format|
       if @place.save
         format.html { redirect_to manage_places_path, notice: "Аудитория добавлена" }
+      else
+        format.html { render "new" }
       end
     end
   end

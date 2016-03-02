@@ -7,8 +7,7 @@ Rails.application.routes.draw do
     resources :permissions, except: [:edit, :update]
     get 'users/search' => 'users#search', as: :users_search
     resources :places
-
-    get 'temperature', to: 'term#index'
+    resources :date_temps
     root :to => 'application#index'
   end
 
