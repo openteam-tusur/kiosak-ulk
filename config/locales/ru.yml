@@ -1,4 +1,6 @@
 ru:
+  app_name: Киоск УЛК
+
   activerecord:
     attributes:
       place:

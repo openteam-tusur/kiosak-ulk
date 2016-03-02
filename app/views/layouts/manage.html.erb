@@ -1,52 +1,15 @@
-<!DOCTYPE HTML>
-<html lang='<%= I18n.locale %>'>
+<!DOCTYPE html>
+<html>
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title><%= content_for?(:page_title) ? yield(:page_title).squish.html_safe : "#{@page_title} — #{strip_tags(@site_name.try(:content).try(:body))}".try(:squish) %></title>
-    <%= favicon_link_tag %>
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-    <!--[if lt IE 9]>
-    <%= javascript_include_tag 'html5.js' %>
-    <%= javascript_include_tag 'respond.js' %>
-    <![endif]-->
-    <!--[if lte IE 7]>
-    <%= stylesheet_link_tag    'stop_ie/application' %>
-    <%= javascript_include_tag 'stop_ie/application' %>
-    <![endif]-->
+    <title>Киоск УЛК</title>
+    <%= stylesheet_link_tag    'manage/application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'manage/application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-    <%#= meta_tags %>
-
   </head>
   <body>
-
-  <nav class="navbar">
-    <div class='navbar-right login'>
-      <% if request.path == '/manage'  %>
-        <div class="col-xs-5">
-        <% if user_signed_in? %>
-          <%= current_user.email %>
-        <% else %>
-          <%= link_to I18n.t('app.sign_in'), sign_in_url, class: "btn btn-default sign-in-link" %>
-        <% end %>
-        </div>
-      <% end %>
-    </div>
-    <div class='image-container'>
-      <%= image_tag "tusur-white.png", class: "brand-image" %>
-    </div>
-  </nav>
-    <div class='container manage'>
-        <% if flash[:alert] %>
-          <p class="flash-error alert alert-danger"><%= flash[:alert] %></p>
-        <% end %>
-        <% if flash[:notice] %>
-          <p class="flash-notice alert alert-success"><%= flash[:notice] %></p>
-        <% end %>
+    <%= render 'navigation' %>
+    <div class="container">
       <%= yield %>
     </div>
-    <%#= render :partial => 'footer' %>
   </body>
 </html>
