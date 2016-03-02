@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require tusur_header
-//= require main
+//= require ./panel
+//= require ./main

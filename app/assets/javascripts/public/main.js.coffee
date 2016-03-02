@@ -1,0 +1,4 @@
+$ ->
+  init_panel()
+
+  return

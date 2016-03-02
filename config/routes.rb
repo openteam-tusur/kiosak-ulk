@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  root :to => 'application#index'
-
-  get '/time' => 'integration#time_and_week'
 
   namespace :manage do
     resources :places
@@ -10,5 +7,11 @@ Rails.application.routes.draw do
     root :to => 'application#index'
   end
 
+  get '/datetime' => 'integration#datetime'
+  get '/week' => 'integration#week'
+
   get '/(*path)', :to => 'application#index'
+
+  root :to => 'application#index'
+
 end

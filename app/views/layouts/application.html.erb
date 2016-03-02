@@ -6,8 +6,8 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <title><%= content_for?(:page_title) ? yield(:page_title).squish.html_safe : "#{@page_title} — #{strip_tags(@site_name.try(:content).try(:body))}".try(:squish) %></title>
     <%= favicon_link_tag %>
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
+    <%= stylesheet_link_tag    'public/application', media: 'all' %>
+    <%= javascript_include_tag 'public/application' %>
     <!--[if lt IE 9]>
     <%= javascript_include_tag 'html5.js' %>
     <%= javascript_include_tag 'respond.js' %>
@@ -18,21 +18,20 @@
     <![endif]-->
     <%= csrf_meta_tags %>
     <%#= meta_tags %>
-
   </head>
   <body>
-  <nav class="navbar">
-    <div class='navbar-right'>
-      <p class='date-week-time'>
-      <span class='date'></span>
-      <span class='week'></span>
-      <span class='time'></span>
-      </p>
-    </div>
-    <div class='image-container'>
-      <%= image_tag "tusur-white.png", class: "brand-image" %>
-    </div>
-  </nav>
+    <nav class='navbar'>
+      <div class='navbar-right'>
+        <p class='date-week-time'>
+          <span class='date'></span>
+          <span class='week'></span>
+          <span class='time'></span>
+        </p>
+      </div>
+      <div class='image-container'>
+        <%= image_tag 'tusur-white.png', class: 'brand-image' %>
+      </div>
+    </nav>
     <div class='page_wrapper'>
       <%= yield %>
     </div>
