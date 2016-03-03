@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   get 'datetime' => 'integration#datetime'
   get 'week' => 'integration#week'
+  get 'temperatures' => 'date_temps#show'
 
   namespace :manage do
     resources :permissions, except: [:edit, :update]

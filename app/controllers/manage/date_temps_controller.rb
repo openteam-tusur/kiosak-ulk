@@ -36,6 +36,11 @@ class Manage::DateTempsController < Manage::ApplicationController
     end
   end
 
+  def destroy
+    @date_temp.destroy
+    redirect_to manage_date_temps_path, notice: "Дата удалена!"
+  end
+
   private
 
   def find_item

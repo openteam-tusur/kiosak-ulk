@@ -1,5 +1,8 @@
-$font-stack: OfficinaSerifBookSCC, sans-serif
+$font-stack: sans-serif, OfficinaSerifBookSCC
 $firm-color: #335aa5
+
+body
+  font-family: $font-stack
 
 nav
   height: 65px
@@ -32,3 +35,59 @@ nav
 .sign-in-link
   width: 200px
 
+.table-temperatures
+  background: #feebdc
+  position: relative
+  top: 70px
+  padding-top: 55px
+
+  h1
+    position: absolute
+    top: -62px
+    background: #f38d4f
+    font-size: 36px
+    color: #FFF
+    padding: 20px
+    left: -30px
+
+    &:before
+      content: ""
+      border: 13px solid #f38d4f
+      position: absolute
+      top: 79px
+      left: 0
+      border-right-color: #FFF
+      border-bottom-color: #FFF
+
+    &:after
+      content: ""
+      height: 100%
+      right: -13px
+      top: 0px
+      border: 20px solid #f38d4f
+      border-bottom-color: #feebdc
+      position: absolute
+      border-right-width: 0px
+
+  .date
+    padding-bottom: 15px
+    font-size: 30px
+
+  span
+    &.place-number
+      background: #f38d4f
+      height: 50px
+      display: block
+      width: 90px
+      float: left
+      line-height: 50px
+      text-align: center
+      font-size: 30px
+      margin: 10px 0
+      color: #FFF
+
+    &.temperature
+      font-size: 30px
+      line-height: 70px
+      font-weight: bold
+      padding-left: 20px

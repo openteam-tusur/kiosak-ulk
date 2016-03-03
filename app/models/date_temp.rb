@@ -1,5 +1,5 @@
 class DateTemp < ActiveRecord::Base
-  has_many :temps
+  has_many :temps, dependent: :destroy
 
   validates_uniqueness_of :date_title
   accepts_nested_attributes_for :temps, :allow_destroy => true

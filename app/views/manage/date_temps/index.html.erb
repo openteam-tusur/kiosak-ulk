@@ -3,15 +3,16 @@
 </div>
 <div class='col-xs-7 btn-actions'>
   <%= link_to 'Добавить данные', new_manage_date_temp_path, class: "btn btn-success" %>
-  <%= link_to 'Управление аудиториями', manage_places_path, class: "btn btn-success" %>
 </div>
 
 <div class='col-xs-12 list_dates'>
-  <ul>
   <% @date_temps.each do |date| %>
-    <li><%= link_to I18n.l(date.date_title, format: :long), manage_date_temp_path(date) %></li>
+    <div class="col-xs-8 date-view-link"><%= link_to I18n.l(date.date_title, format: :long), manage_date_temp_path(date) %></div>
+    <div class="col-xs-4">
+      <%= link_to  manage_date_temp_path(date), method: :delete, data: { confirm: "Удалить дату: #{I18n.l(date.date_title, format: :long)}?" } do %>
+        <span class="glyphicon glyphicon-remove pull-right" data-toggle='tooltip' data-placement='top' title='Удалить'></span></div>
+      <% end %>
   <% end %>
-  </ul>
 </div>
 
 <%= paginate @date_temps %>
