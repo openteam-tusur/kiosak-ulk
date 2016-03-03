@@ -1,10 +1,12 @@
 <% content_for :page_title, t('app.title') %>
 
-<div class='main_page'>
-
-  <ul>
+<div class='col-xs-5 col-xs-offset-3 main-navigation'>
   <% @main_navigation.content.values.first.children.each do |key, value| %>
-    <li><%= render_link_for_navigation(nil, value, { :link_for => key }) %></li>
+    <div class="col-xs-12 nav-item">
+      <%= render_link_for_navigation(nil, value, { :link_for => key }) %>
+    </div>
   <% end %>
-  </ul>
+  <div class="col-xs-12 nav-item">
+    <%= link_to "Температурный режим в учебных аудиториях", temperatures_path %>
+  </div>
 </div>
