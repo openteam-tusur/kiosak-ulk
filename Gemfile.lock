@@ -73,6 +73,9 @@ GEM
       activerecord (>= 3.2, < 6.0)
       rake (~> 10.4)
     arel (6.0.3)
+    auto_html (1.6.4)
+      redcarpet (~> 3.1)
+      rinku (~> 1.5.0)
     autoprefixer-rails (6.3.3.1)
       execjs
     binding_of_caller (0.7.2)
@@ -213,6 +216,7 @@ GEM
     rb-fsevent (0.9.7)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
+    redcarpet (3.3.3)
     redis (3.2.2)
     redis-session-store (0.8.1)
       actionpack (>= 3, < 5.1)
@@ -224,6 +228,7 @@ GEM
     rest-client-components (1.4.0)
       rack (>= 1.0.1)
       rest-client (>= 1.6.0)
+    rinku (1.5.1)
     russian (0.6.0)
       i18n (>= 0.5.0)
     sass (3.4.21)
@@ -292,6 +297,7 @@ DEPENDENCIES
   annotate
   auth_client!
   auth_redis_user_connector!
+  auto_html
   bootstrap-sass
   byebug
   cancancan
