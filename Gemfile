@@ -28,7 +28,6 @@ gem 'russian'
 gem 'sass-rails', '~> 5.0'
 gem 'simple-navigation'
 gem 'simple_form'
-gem 'turbolinks'
 gem 'tusur_header'
 gem 'uglifier', '>= 1.3.0'
 
