@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require tusur_header
+//= require ./countdown
 //= require ./panel
 //= require ./main
