@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'auth_client', git: 'https://github.com/openteam-tusur/auth_client'
 gem 'auth_redis_user_connector', git: 'https://github.com/openteam-tusur/auth_redis_user_connector'
 gem 'bootstrap-sass'
-gem 'auto_html'
+gem 'auto_html', '~> 1.6.4'
 gem 'cancancan'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'compass-rails'
@@ -38,10 +38,16 @@ end
 
 group :development do
   gem 'annotate', require: false
-  gem 'web-console', '~> 2.0'
+  gem 'capistrano-auth-subscriber'
+  gem 'openteam-capistrano', '~> 1.0.11'
   gem 'spring'
+  gem 'web-console', '~> 2.0'
 end
 
 group :test do
   gem 'sqlite3'
+end
+
+group :production do
+  gem 'unicorn'
 end

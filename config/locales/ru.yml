@@ -1,4 +1,8 @@
 ru:
+
+  app:
+    title: 'Киоск УЛК'
+
   app_name: 'Киоск УЛК'
 
   permissions:
