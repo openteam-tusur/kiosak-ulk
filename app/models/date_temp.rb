@@ -5,6 +5,8 @@ class DateTemp < ActiveRecord::Base
   accepts_nested_attributes_for :temps, :allow_destroy => true
 
   scope :ordered, -> { order('date_title desc') }
+  scope :actual, -> { ordered.limit(1).first }
+
 end
 
 # == Schema Information

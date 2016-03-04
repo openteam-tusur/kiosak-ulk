@@ -2,6 +2,7 @@ class Temp < ActiveRecord::Base
   belongs_to :place
   belongs_to :date_temp
 
+  scope :active, -> { where("temperature != ''") }
   validates :temperature, numericality: true, allow_blank: true
 end
 
