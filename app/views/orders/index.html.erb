@@ -5,9 +5,9 @@
     <h2><%= order.title %></h2>
 
     <% if order.document_content_type == 'application/pdf' %>
-      <%= content_tag(:iframe, nil, src: "http://docs.google.com/gview?url=#{order.document.url}&embedded=true", width: "100%", height: "800px") %>
+      <%= content_tag(:iframe, nil, src: "#{order.document.url}&embedded=true", width: "100%", height: "800px") %>
     <% else %>
-      <%= image_tag order.document.url %>
+      <%= image_tag order.document.url, class: "img-responsive" %>
     <% end %>
   <% end %>
 </div>
