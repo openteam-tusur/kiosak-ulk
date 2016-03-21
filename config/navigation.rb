@@ -8,6 +8,8 @@ SimpleNavigation::Configuration.run do |navigation|
       highlights_on: /\/manage\/places/, if: -> { can?(:manage, Place) }
     primary.item :places, 'Управление температурой', manage_date_temps_path,
       highlights_on: /\/manage\/date_temps/, if: -> { can?(:manage, DateTemp) }
+    primary.item :orders, 'Приказы', manage_orders_path,
+      highlights_on: /\/manage\/orders/, if: -> { can?(:manage, Order) }
   end
 end
 

@@ -1,0 +1,22 @@
+<div class='row'>
+  <div class='col-xs-4'>
+    <h3>Приказы</h3>
+  </div>
+  <div class='col-xs-8 btn-actions'>
+    <%= link_to 'Загрузить документ', new_manage_order_path, class: 'btn btn-success' %>
+  </div>
+</div>
+
+<% @orders.each do |order| %>
+  <div class='places_list panel panel-default panel-body'>
+    <div class='col-xs-10 number'><%= link_to order.title, manage_order_path(order) %></div>
+    <div class='actions'>
+      <%= link_to edit_manage_order_path(order) do %>
+        <span class='glyphicon glyphicon-pencil' data-toggle='tooltip' data-placement='top' title='Редактировать'></span>
+      <% end %>
+      <%= link_to manage_order_path(order), method: :delete, data: { confirm: 'Удалить документ?' } do %>
+        <span class='glyphicon glyphicon-remove' data-toggle='tooltip' data-placement='top' title='Удалить'>
+      <% end %>
+    </div>
+  </div>
+<% end %>

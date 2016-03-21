@@ -1,0 +1,14 @@
+<div class='row'>
+  <div class='col-xs-4'>
+    <h3><%= @order.title %></h3>
+  </div>
+  <div class='col-xs-8 btn-actions'>
+    <%= link_to 'Удалить документ', manage_order_path(@order), method: :delete, data: { confirm: 'Удалить документ?' } , class: 'btn btn-success' %>
+    <%= link_to "Редактировать", edit_manage_order_path(@order), class: "btn btn-success" %>
+  </div>
+
+  <div class='col-xs-12 order'>
+    <%= content_tag(:iframe, nil, src: @order.document.url, width: "100%", height: "500px") %>
+  </div>
+</div>
+

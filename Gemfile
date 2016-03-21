@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'auth_client', git: 'https://github.com/openteam-tusur/auth_client'
 gem 'auth_redis_user_connector', git: 'https://github.com/openteam-tusur/auth_redis_user_connector'
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'bootstrap-sass'
 gem 'auto_html', '~> 1.6.4'
 gem 'cancancan'

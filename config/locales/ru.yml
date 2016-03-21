@@ -19,14 +19,14 @@ ru:
               taken: "Такой кабинет уже существует"
 
     attributes:
-
+      order:
+        title: "Название документа"
+        document: "Файл"
       permission:
         name: 'ФИО'
         role: 'Роль'
-
       date_temp:
         date_title: "Дата"
-
       place:
         number: "Номер аудитории"
       temp:

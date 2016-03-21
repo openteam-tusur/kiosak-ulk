@@ -1,0 +1,14 @@
+<%= render "widgets/back_button" %>
+<div class="col-xs-10 col-xs-offset-1 orders">
+  <h1>Приказы</h1>
+  <% @orders.each do |order| %>
+    <h2><%= order.title %></h2>
+
+    <% if order.document_content_type == 'application/pdf' %>
+      <%= content_tag(:iframe, nil, src: "http://docs.google.com/gview?url=#{order.document.url}&embedded=true", width: "100%", height: "800px") %>
+    <% else %>
+      <%= image_tag order.document.url %>
+    <% end %>
+  <% end %>
+</div>
+

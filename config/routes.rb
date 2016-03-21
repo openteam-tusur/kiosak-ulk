@@ -3,12 +3,16 @@ Rails.application.routes.draw do
   get 'datetime' => 'integration#datetime'
   get 'week' => 'integration#week'
   get 'temperatures' => 'date_temps#show'
+  get 'orders' => 'orders#index'
 
   namespace :manage do
     resources :permissions, except: [:edit, :update]
-    get 'users/search' => 'users#search', as: :users_search
     resources :places
     resources :date_temps
+    resources :orders
+
+    get 'users/search' => 'users#search', as: :users_search
+
     root :to => 'application#index'
   end
 
