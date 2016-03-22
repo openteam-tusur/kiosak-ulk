@@ -1,7 +1,7 @@
 ru:
-
   app:
     title: 'Киоск УЛК'
+    sign_in: "Войти"
 
   app_name: 'Киоск УЛК'
 
@@ -31,9 +31,6 @@ ru:
         number: "Номер аудитории"
       temp:
         temperature: "Температура"
-
-  app:
-    sign_in: "Войти"
 
   helpers:
     submit:
