@@ -17,7 +17,7 @@ gem 'kaminari'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'jquery-ui-sass-rails'
-gem 'openteam-commons'
+gem 'openteam-commons', '~> 0.3.3'
 gem 'pg'
 gem 'rack-cache'
 gem 'rack-utf8_sanitizer'
@@ -40,7 +40,7 @@ end
 group :development do
   gem 'annotate', require: false
   gem 'capistrano-auth-subscriber'
-  gem 'openteam-capistrano', '~> 1.0.11'
+  gem 'openteam-capistrano', '~> 1.0.16'
   gem 'spring'
   gem 'web-console', '~> 2.0'
 end

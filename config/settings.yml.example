@@ -6,8 +6,12 @@ app:
   url:          'http://app.url'
 
 errors:
-  url:          'http://errors.url'
-  key:          'key'
+  key:          'KEY'
+  url:          'http://errbit'
+
+slack:
+  channel:      'channel'
+  webhook:      'http://webhook'
 
 profile:
   url:          'http://localhost:3001/'
