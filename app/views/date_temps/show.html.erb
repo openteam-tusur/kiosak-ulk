@@ -1,13 +1,13 @@
-<%= render "widgets/back_button" %>
-<div class="col-xs-10 col-xs-offset-1 table-temperatures">
+<%= render 'widgets/back_button' %>
+<div class='col-xs-10 col-xs-offset-1 table-temperatures'>
   <h1>Температурный режим в учебных аудиториях</h1>
   <% if @date_temp.present? %>
-    <div class="col-xs-12 date"><%= I18n.l(@date_temp.date_title, format: :long) %></div>
+    <div class='col-xs-12 date'><%= I18n.l(@date_temp.date_title, format: :long) %></div>
 
-    <% @date_temp.temps.active.sort{|a, b| a.place <=> b.place }.each do |temp| %>
-      <div class="col-xs-4">
-        <span class="place-number"><%= temp.place.number %></span>
-        <span class="temperature"><%= "+" if (temp.temperature.to_i > 0) %><%= temp.temperature %>&deg;</span>
+    <% @date_temp.temps.active.sort{|a, b| a.place.number <=> b.place.number }.each do |temp| %>
+      <div class='col-xs-4'>
+        <span class='place-number'><%= temp.place.number %></span>
+        <span class='temperature'><%= '+' if (temp.temperature.to_i > 0) %><%= temp.temperature %>&deg;</span>
       </div>
     <% end %>
 

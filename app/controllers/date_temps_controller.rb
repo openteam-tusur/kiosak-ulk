@@ -1,8 +1,9 @@
 class DateTempsController < ActionController::Base
 
-  layout "application"
+  layout 'application'
 
   def show
     @date_temp = DateTemp.actual
   end
+
 end
